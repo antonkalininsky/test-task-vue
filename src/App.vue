@@ -1,47 +1,122 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div class="main">
+        <div class="top-panel">
+            <div class="items-group-wrap">
+                <div class="items-group draw-box">
+                    <div class="item-selected draw-box item">item</div>
+                    <div class="item-selected draw-box item">item</div>
+                    <div class="item-selected draw-box item">item</div>
+                    <div class="item-selected draw-box item">item</div>
+                    <div class="item-selected draw-box item">item</div>
+                    <div class="item-selected draw-box item">item</div>
+                </div>
+                <div class="items-group-text">selected: n / m</div>
+            </div>
+            <div class="item-show draw-box">item-show</div>
+        </div>
+        <div class="bot-panel">
+            <div class="left-column draw-box">
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+            </div>
+            <div class="right-column draw-box">
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+                <div class="item-selected draw-box item">item</div>
+            </div>
+        </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
+<script setup></script>
+
+<style>
+body,
+* {
+    margin: 0;
+    padding: 0;
+}
+</style>
+
 <style scoped>
-header {
-  line-height: 1.5;
+.main {
+    width: calc(100vw - 10px);
+    height: 90vh;
+    padding: 5px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+/* TOP PANEL */
+
+.top-panel {
+    margin: 0 auto 20px auto;
+
+    width: 100%;
+    height: 200px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.draw-box {
+    border: 2px solid black;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+.item-show {
+    width: 30%;
+}
 
-  header .wrapper {
+.items-group-wrap {
+    width: 30%;
+    position: relative;
+}
+
+.items-group {
     display: flex;
-    place-items: flex-start;
+    flex-direction: row;
     flex-wrap: wrap;
-  }
+
+    padding: 10px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.item {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.items-group-text {
+    position: absolute;
+    bottom: 5px;
+
+    width: 100%;
+    text-align: center;
+}
+
+/* BOT PANEL */
+.bot-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-column,
+.right-column {
+    width: 49%;
+    height: 60vh;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
 }
 </style>
